@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>PALLU — Full Collection | The Edit</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23800020'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E">
+  <title>PALLU — Full Collection | Ties, Waistcoats & Accessories</title>
+  <link rel="icon" type="image/png" href="pallu-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     /* ====================================================
-       RESET & DESIGN TOKENS — NEW COLOR PALETTE
+       RESET & DESIGN TOKENS — COLOR PALETTE
     ==================================================== */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -21,12 +21,12 @@
 
     :root {
       --accent:       #800020;      /* Burgundy – buttons, CTAs, active links */
-      --accent-light: #9a2a44;      /* Lighter burgundy for hover */
+      --accent-light: #9a2a44;
       --text-dark:    #1A1A1A;      /* Deep Onyx – all body text, headings */
-      --bg-white:     #FFFFFF;      /* Pure White – main background */
-      --bg-gray:      #F2F2F2;      /* Cool Gray – section dividers, cards, footer */
-      --highlight:    #C5A059;      /* Soft gold – optional accents */
-      --border-light: #e0e0e0;      /* Light border for subtle separation */
+      --bg-white:     #FFFFFF;
+      --bg-gray:      #F2F2F2;
+      --highlight:    #C5A059;
+      --border-light: #e0e0e0;
       --serif:        'Instrument Serif', Georgia, serif;
       --sans:         'Inter', sans-serif;
       --ease-luxury:  cubic-bezier(0.16, 1, 0.3, 1);
@@ -46,15 +46,13 @@
     @keyframes bodyFadeIn { to { opacity: 1; } }
 
     /* ====================================================
-       SCROLL REVEAL
+       SCROLL REVEAL — HARDWARE ACCELERATED
     ==================================================== */
     .reveal {
       opacity: 0;
       transform: translateY(32px);
       will-change: transform, opacity;
-      transition:
-        opacity  0.95s var(--ease-luxury),
-        transform 0.95s var(--ease-luxury);
+      transition: opacity 0.95s var(--ease-luxury), transform 0.95s var(--ease-luxury);
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-d1 { transition-delay: 0.10s; }
@@ -91,45 +89,22 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition:
-        background 0.5s ease,
-        backdrop-filter 0.5s ease,
-        padding 0.4s var(--ease-luxury);
+      transition: background 0.5s ease, backdrop-filter 0.5s ease, padding 0.4s var(--ease-luxury);
       background: var(--bg-white);
-      border-bottom: 1px solid var(--border-light);
     }
+
     nav.scrolled {
       background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
       padding: 0.9rem 3rem;
       border-bottom: 1px solid var(--border-light);
     }
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 2.4rem;
-    }
+    .nav-left { display: flex; align-items: center; gap: 2.4rem; }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; line-height: 1; }
+    .nav-logo img { display: block; height: 32px; width: auto; }
 
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      line-height: 1;
-    }
-    .nav-logo img {
-      display: block;
-      height: 32px;
-      width: auto;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.8rem;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 2.8rem; list-style: none; }
     .nav-links a {
       font-size: 0.68rem;
       font-weight: 500;
@@ -151,12 +126,7 @@
     .nav-links a:hover { color: var(--accent); }
     .nav-links a:hover::after { width: 100%; }
 
-    /* NAV RIGHT */
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
 
     .cart-icon {
       position: relative;
@@ -165,11 +135,7 @@
       align-items: center;
       height: 32px;
     }
-    .cart-icon svg {
-      display: block;
-      stroke: var(--text-dark);
-      transition: stroke 0.3s;
-    }
+    .cart-icon svg { display: block; stroke: var(--text-dark); transition: stroke 0.3s; }
     .cart-icon:hover svg { stroke: var(--accent); }
     .cart-count {
       position: absolute;
@@ -189,15 +155,14 @@
       display: none;
       background: none;
       border: none;
-      padding: 0;
       cursor: pointer;
       align-items: center;
       justify-content: center;
       height: 32px;
       width: 32px;
     }
-    .nav-hamburger:hover svg line { stroke: var(--accent); }
     .nav-hamburger svg line { stroke: var(--text-dark); transition: stroke 0.3s; }
+    .nav-hamburger:hover svg line { stroke: var(--accent); }
 
     /* ====================================================
        MOBILE OVERLAY
@@ -226,17 +191,9 @@
       text-decoration: none;
       opacity: 0;
       transform: translateY(22px);
-      will-change: transform, opacity;
-      transition:
-        transform 0.45s var(--ease-luxury),
-        opacity 0.45s var(--ease-luxury),
-        color 0.25s;
+      transition: transform 0.45s var(--ease-luxury), opacity 0.45s var(--ease-luxury), color 0.25s;
     }
     .mobile-nav.open a { transform: translateY(0); opacity: 1; }
-    .mobile-nav.open a:nth-child(2) { transition-delay: 0.08s; }
-    .mobile-nav.open a:nth-child(3) { transition-delay: 0.16s; }
-    .mobile-nav.open a:nth-child(4) { transition-delay: 0.24s; }
-    .mobile-nav.open a:nth-child(5) { transition-delay: 0.32s; }
     .mobile-nav a:hover { color: var(--accent); }
 
     .mobile-close {
@@ -248,6 +205,7 @@
       padding: 8px;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
     .mobile-close svg { stroke: var(--text-dark); transition: stroke 0.3s; }
     .mobile-close:hover svg { stroke: var(--accent); }
@@ -291,16 +249,6 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
-    }
-
-    .section-header { text-align: center; margin-bottom: 2.5rem; }
-
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 4.5vw, 3.2rem);
-      font-style: italic;
-      margin-top: 0.7rem;
-      color: var(--text-dark);
     }
 
     /* ====================================================
@@ -440,7 +388,6 @@
       cursor: pointer;
       position: relative;
       will-change: transform;
-      transition: background 0.3s;
     }
 
     .product-img-wrap {
@@ -451,17 +398,11 @@
     .product-img-wrap img {
       width: 100%; height: 100%;
       object-fit: cover;
-      transition:
-        transform 0.9s var(--ease-luxury),
-        filter 0.55s;
+      transition: transform 0.9s var(--ease-luxury), filter 0.55s;
       filter: brightness(0.98);
-      will-change: transform, filter;
     }
     .product-card:hover .product-img-wrap img,
-    .product-card:focus-within .product-img-wrap img {
-      transform: scale(1.07);
-      filter: brightness(0.92);
-    }
+    .product-card:focus-within .product-img-wrap img { transform: scale(1.07); filter: brightness(0.92); }
 
     .product-overlay {
       position: absolute;
@@ -514,7 +455,6 @@
       letter-spacing: 0.10em;
     }
 
-    /* EMPTY STATE */
     .empty-state {
       grid-column: 1 / -1;
       text-align: center;
@@ -527,7 +467,7 @@
     }
 
     /* ====================================================
-       CART DRAWER
+       CART DRAWER & MODAL (reusing styles from main page)
     ==================================================== */
     .cart-drawer {
       position: fixed;
@@ -546,108 +486,31 @@
       border-left: 1px solid var(--border-light);
     }
     .cart-drawer.open { right: 0; }
-
-    .cart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border-light);
-      padding-bottom: 1.2rem;
-      margin-bottom: 1.2rem;
-    }
-    .cart-header h3 {
-      font-family: var(--serif);
-      font-size: 1.55rem;
-      font-style: italic;
-      letter-spacing: 0.06em;
-      color: var(--text-dark);
-    }
-    .close-cart {
-      background: none;
-      border: none;
-      color: var(--text-dark);
-      font-size: 1.3rem;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
+    .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-light); padding-bottom: 1.2rem; margin-bottom: 1.2rem; }
+    .cart-header h3 { font-family: var(--serif); font-size: 1.55rem; font-style: italic; letter-spacing: 0.06em; color: var(--text-dark); }
+    .close-cart { background: none; border: none; color: var(--text-dark); font-size: 1.3rem; cursor: pointer; transition: color 0.3s; line-height: 1; }
     .close-cart:hover { color: var(--accent); }
-
     .cart-items { flex: 1; overflow-y: auto; }
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1.1rem;
-      padding-bottom: 1.1rem;
-      border-bottom: 1px solid var(--border-light);
-      font-size: 0.78rem;
-      color: var(--text-dark);
-    }
+    .cart-item { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.1rem; padding-bottom: 1.1rem; border-bottom: 1px solid var(--border-light); font-size: 0.78rem; color: var(--text-dark); }
     .cart-item strong { font-weight: 500; display: block; margin-bottom: 0.2rem; }
     .cart-item .price-cell { text-align: right; }
-    .remove-btn {
-      background: none;
-      border: none;
-      color: var(--accent);
-      cursor: pointer;
-      font-size: 0.72rem;
-      margin-top: 0.3rem;
-      padding: 0;
-      display: block;
-      transition: opacity 0.2s;
-    }
+    .remove-btn { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 0.72rem; margin-top: 0.3rem; padding: 0; display: block; transition: opacity 0.2s; }
     .remove-btn:hover { opacity: 0.7; }
-
-    .cart-total {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border-light);
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      color: var(--text-dark);
-    }
-
-    .checkout-btn {
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 1rem;
-      margin-top: 1.2rem;
-      width: 100%;
-      font-weight: 600;
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      cursor: pointer;
-      font-family: var(--sans);
-      transition: background 0.3s;
-    }
+    .cart-total { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; color: var(--text-dark); }
+    .checkout-btn { background: var(--accent); color: white; border: none; padding: 1rem; margin-top: 1.2rem; width: 100%; font-weight: 600; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; font-family: var(--sans); transition: background 0.3s; }
     .checkout-btn:hover { background: var(--accent-light); }
 
-    /* ====================================================
-       MODAL — LUXURY SLIDE-UP
-    ==================================================== */
     .modal {
       display: none;
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
       z-index: 1200;
       align-items: flex-end;
       justify-content: center;
     }
-
-    .modal-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      pointer-events: none;
-    }
-
+    .modal-wrapper { width: 100%; display: flex; justify-content: center; align-items: flex-end; pointer-events: none; }
     .modal-content {
       background: var(--bg-white);
       width: 100%;
@@ -660,21 +523,11 @@
       transform: translateY(60px);
       opacity: 0;
       filter: blur(8px);
-      will-change: transform, opacity, filter;
-      transition:
-        transform 0.62s var(--ease-luxury),
-        opacity   0.62s var(--ease-luxury),
-        filter    0.62s var(--ease-luxury);
+      transition: transform 0.62s var(--ease-luxury), opacity 0.62s var(--ease-luxury), filter 0.62s var(--ease-luxury);
     }
-
     .modal.show { display: flex; }
-    .modal.show .modal-content {
-      transform: translateY(0);
-      opacity: 1;
-      filter: blur(0);
-    }
+    .modal.show .modal-content { transform: translateY(0); opacity: 1; filter: blur(0); }
     .modal.animating { display: flex; }
-
     .modal-close {
       position: absolute;
       top: 1.4rem; right: 1.8rem;
@@ -687,25 +540,9 @@
       transition: color 0.3s;
     }
     .modal-close:hover { color: var(--accent); }
-
-    .modal h3 {
-      font-family: var(--serif);
-      font-size: 1.9rem;
-      font-style: italic;
-      letter-spacing: 0.06em;
-      color: var(--text-dark);
-      margin-bottom: 0.4rem;
-    }
-    .modal .modal-sub {
-      font-size: 0.62rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 2.2rem;
-    }
-
-    .modal input,
-    .modal textarea {
+    .modal h3 { font-family: var(--serif); font-size: 1.9rem; font-style: italic; letter-spacing: 0.06em; color: var(--text-dark); margin-bottom: 0.4rem; }
+    .modal .modal-sub { font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.2rem; }
+    .modal input, .modal textarea {
       width: 100%;
       background: transparent;
       border: none;
@@ -719,21 +556,9 @@
       outline: none;
       transition: border-color 0.35s, box-shadow 0.35s;
       border-radius: 0;
-      appearance: none;
     }
-    .modal input::placeholder,
-    .modal textarea::placeholder {
-      color: rgba(26, 26, 26, 0.32);
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
-    }
-    .modal input:focus,
-    .modal textarea:focus {
-      border-bottom-color: var(--accent);
-      box-shadow: 0 1px 0 var(--accent);
-    }
+    .modal input:focus, .modal textarea:focus { border-bottom-color: var(--accent); box-shadow: 0 1px 0 var(--accent); }
     .modal textarea { resize: none; min-height: 90px; }
-
     .modal .submit-btn {
       background: var(--accent);
       border: none;
@@ -746,17 +571,11 @@
       text-transform: uppercase;
       cursor: pointer;
       color: white;
-      font-family: var(--sans);
       transition: background 0.35s;
     }
     .modal .submit-btn:hover { background: var(--accent-light); }
-
     .whatsapp-redirect { margin-top: 1.5rem; text-align: center; }
-    .whatsapp-redirect p {
-      font-size: 0.72rem;
-      color: rgba(26, 26, 26, 0.5);
-      margin-bottom: 1rem;
-    }
+    .whatsapp-redirect p { font-size: 0.72rem; color: rgba(26, 26, 26, 0.55); margin-bottom: 1rem; }
     .whatsapp-redirect a {
       display: inline-flex;
       align-items: center;
@@ -768,13 +587,10 @@
       border-radius: 40px;
       font-size: 0.75rem;
       font-weight: 500;
-      font-family: var(--sans);
-      letter-spacing: 0.06em;
       transition: opacity 0.3s;
     }
     .whatsapp-redirect a:hover { opacity: 0.88; }
 
-    /* Privacy 2-col */
     .privacy-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -784,21 +600,8 @@
       padding-right: 0.5rem;
       margin-top: 1.8rem;
     }
-    .privacy-block p {
-      font-size: 0.75rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: rgba(26, 26, 26, 0.62);
-    }
-    .privacy-block strong {
-      display: block;
-      font-size: 0.58rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
+    .privacy-block p { font-size: 0.75rem; font-weight: 300; line-height: 1.8; color: rgba(26, 26, 26, 0.65); }
+    .privacy-block strong { display: block; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
 
     /* ====================================================
        FOOTER
@@ -818,22 +621,25 @@
     .footer-brand p {
       font-size: 0.73rem;
       font-weight: 300;
-      color: rgba(26, 26, 26, 0.42);
+      color: rgba(26, 26, 26, 0.45);
       max-width: 240px;
       margin: 1.1rem 0 1.4rem;
       line-height: 1.7;
     }
     .social-row { display: flex; gap: 0.9rem; }
     .social-link {
-      width: 34px; height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
       border: 1px solid var(--border-light);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.58rem;
-      text-decoration: none;
-      color: var(--text-dark);
+      border-radius: 50%;
       transition: all 0.3s;
     }
-    .social-link:hover { border-color: var(--accent); color: var(--accent); }
+    .social-link svg { width: 18px; height: 18px; stroke: var(--text-dark); stroke-width: 1.5; transition: stroke 0.3s; }
+    .social-link:hover { border-color: var(--accent); }
+    .social-link:hover svg { stroke: var(--accent); }
     .footer-col h5 {
       font-size: 0.58rem;
       letter-spacing: 0.24em;
@@ -845,7 +651,7 @@
     .footer-col ul li { margin-bottom: 0.75rem; }
     .footer-col ul a {
       font-size: 0.73rem;
-      color: rgba(26, 26, 26, 0.42);
+      color: rgba(26, 26, 26, 0.45);
       text-decoration: none;
       transition: color 0.3s;
       cursor: pointer;
@@ -861,7 +667,7 @@
     }
     .footer-bottom p {
       font-size: 0.62rem;
-      color: rgba(26, 26, 26, 0.26);
+      color: rgba(26, 26, 26, 0.28);
       letter-spacing: 0.07em;
     }
 
@@ -896,14 +702,12 @@
       .footer-grid { grid-template-columns: repeat(2, 1fr); }
       .product-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media (max-width: 860px) {
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
       .cart-drawer { width: 100%; right: -100%; }
       .modal-content { max-width: 100%; border-radius: 8px 8px 0 0; padding: 2.5rem 1.8rem; }
     }
-
     @media (max-width: 640px) {
       .product-grid { grid-template-columns: 1fr; }
       .product-grid .product-card { margin-bottom: 40px; }
@@ -939,7 +743,7 @@
   <nav id="nav">
     <div class="nav-left">
       <a class="nav-logo" href="index.html">
-        <img src="pallu-logo (1) (2).png" alt="PALLU Logo" style="height: 32px; width: auto;">
+        <img src="pallu-logo.png" alt="PALLU Logo" style="height: 32px; width: auto;">
       </a>
       <ul class="nav-links">
         <li><a href="index.html#collection-preview">Collection</a></li>
@@ -971,9 +775,9 @@
        COLLECTION BANNER HEADER
   ==================================================== -->
   <header class="collection-banner">
-    <span class="eyebrow reveal">Complete Archive · 2025</span>
+    <span class="eyebrow reveal">Complete Archive · 2026</span>
     <h1 class="reveal reveal-d1">The Full Collection</h1>
-    <p class="reveal reveal-d2">Every knot. Every silk. Every signature.</p>
+    <p class="reveal reveal-d2">Ties · Waistcoats · Brooches · Tie Clips</p>
 
     <!-- Search -->
     <div class="search-wrap reveal reveal-d3">
@@ -985,9 +789,9 @@
 
     <!-- Category pills -->
     <div class="category-pills reveal reveal-d4">
-      <a href="#collection-silk"     class="pill">Lagos Silk Edit</a>
-      <a href="#collection-patterned" class="pill">Patterned Heritage</a>
-      <a href="#collection-wedding"   class="pill">Wedding Accession</a>
+      <a href="#ties" class="pill">Ties</a>
+      <a href="#waistcoats" class="pill">Waistcoats</a>
+      <a href="#accessories" class="pill">Brooches & Clips</a>
     </div>
   </header>
 
@@ -997,34 +801,34 @@
   <main>
     <div class="container">
 
-      <!-- ── CATEGORY 1: THE LAGOS SILK EDIT ────────────── -->
-      <section id="collection-silk" class="category-section">
+      <!-- ── CATEGORY 1: TIES ────────────────────────────── -->
+      <section id="ties" class="category-section">
         <div class="category-header">
-          <span class="category-eyebrow">Pure Luxury</span>
-          <h2 class="category-title">The Lagos Silk Edit</h2>
+          <span class="category-eyebrow">Signature Neckwear</span>
+          <h2 class="category-title">Premium Ties</h2>
           <hr class="ornament-center">
         </div>
-        <div class="product-grid" id="silkGrid"></div>
+        <div class="product-grid" id="tiesGrid"></div>
       </section>
 
-      <!-- ── CATEGORY 2: THE PATTERNED HERITAGE ─────────── -->
-      <section id="collection-patterned" class="category-section">
+      <!-- ── CATEGORY 2: WAISTCOATS ──────────────────────── -->
+      <section id="waistcoats" class="category-section">
         <div class="category-header">
-          <span class="category-eyebrow">Tradition Meets Modern</span>
-          <h2 class="category-title">The Patterned Heritage</h2>
+          <span class="category-eyebrow">Bespoke Elegance</span>
+          <h2 class="category-title">Waistcoats</h2>
           <hr class="ornament-center">
         </div>
-        <div class="product-grid" id="patternedGrid"></div>
+        <div class="product-grid" id="waistcoatsGrid"></div>
       </section>
 
-      <!-- ── CATEGORY 3: THE WEDDING ACCESSION ──────────── -->
-      <section id="collection-wedding" class="category-section">
+      <!-- ── CATEGORY 3: ACCESSORIES (Brooches & Tie Clips) ─ -->
+      <section id="accessories" class="category-section">
         <div class="category-header">
-          <span class="category-eyebrow">Bespoke · Formal</span>
-          <h2 class="category-title">The Wedding Accession</h2>
+          <span class="category-eyebrow">The Finishing Touch</span>
+          <h2 class="category-title">Brooches & Tie Clips</h2>
           <hr class="ornament-center">
         </div>
-        <div class="product-grid" id="weddingGrid"></div>
+        <div class="product-grid" id="accessoriesGrid"></div>
       </section>
 
     </div><!-- /container -->
@@ -1038,29 +842,43 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a class="nav-logo" href="index.html">
-            <img src="pallu-logo (1) (2).png" alt="PALLU Logo" style="height: 28px; width: auto;">
+            <img src="pallu-logo.png" alt="PALLU Logo" style="height: 28px; width: auto;">
           </a>
-          <p>Neckwear of uncommon distinction, crafted in Victoria Island, Lagos & Como, Italy.</p>
+          <p>Nigerian online store for premium ties, waistcoats, brooches, tie clips, and style inspiration.</p>
           <div class="social-row">
-            <a class="social-link" href="#" aria-label="Instagram">IG</a>
-            <a class="social-link" href="#" aria-label="Twitter">X</a>
-            <a class="social-link" href="#" aria-label="LinkedIn">LI</a>
+            <a class="social-link" href="https://instagram.com/pallu.ng" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a class="social-link" href="https://facebook.com/pallu.ng" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a class="social-link" href="#" id="whatsappFooter" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </a>
           </div>
         </div>
 
         <div class="footer-col">
           <h5>Shop</h5>
           <ul>
-            <li><a href="#collection-silk">New Arrivals</a></li>
-            <li><a href="#collection-patterned">Silk Collection</a></li>
-            <li><a href="#collection-wedding">Wedding Edit</a></li>
+            <li><a href="#ties">Ties</a></li>
+            <li><a href="#waistcoats">Waistcoats</a></li>
+            <li><a href="#accessories">Brooches & Clips</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5>Atelier</h5>
+          <h5>Learn</h5>
           <ul>
-            <li><a href="index.html#heritage">Our Heritage</a></li>
+            <li><a href="index.html#heritage">Style Tips</a></li>
             <li><a href="index.html#heritage">The Craft</a></li>
             <li><a href="index.html#bespoke">Bespoke Service</a></li>
           </ul>
@@ -1070,15 +888,15 @@
           <h5>Services</h5>
           <ul>
             <li><a href="#" id="privacyLink">Privacy Policy</a></li>
-            <li><a href="index.html#bespoke">Book a Consultation</a></li>
+            <li><a href="index.html#bespoke">Book Consultation</a></li>
             <li><a href="#" id="footerContactLink">Contact</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 PALLU London · Lagos. All rights reserved.</p>
-        <p style="font-size:0.58rem;">Silk from Como · Finished in Victoria Island</p>
+        <p>© 2026 PALLU. All rights reserved. Nigerian owned & operated.</p>
+        <p style="font-size:0.58rem;">WhatsApp: +234 915 972 3217</p>
       </div>
     </div>
   </footer>
@@ -1092,7 +910,7 @@
       <button class="close-cart" id="closeCart">✕</button>
     </div>
     <div id="cartItemsList" class="cart-items"></div>
-    <div id="cartTotal" class="cart-total">Total: £0.00</div>
+    <div id="cartTotal" class="cart-total">Total: ₦0.00</div>
     <button id="checkoutBtn" class="checkout-btn">Checkout via WhatsApp</button>
   </div>
 
@@ -1104,17 +922,17 @@
       <div class="modal-content">
         <button class="modal-close" aria-label="Close">&times;</button>
         <h3>Bespoke Inquiry</h3>
-        <p class="modal-sub">Commission · Victoria Island Atelier</p>
+        <p class="modal-sub">Virtual Consultation</p>
         <form id="bespokeForm" action="https://formspree.io/f/xbdpjekw" method="POST">
           <input type="text"  name="name"    placeholder="Full Name"          required>
           <input type="email" name="email"   placeholder="Email Address"      required>
-          <input type="tel"   name="phone"   placeholder="Phone (optional)">
-          <textarea name="message" rows="3"  placeholder="Tell us about your vision..."></textarea>
+          <input type="tel"   name="phone"   placeholder="Phone (WhatsApp)"   required>
+          <textarea name="message" rows="3"  placeholder="Tell us about your style needs..."></textarea>
           <button type="submit" class="submit-btn">Send Request</button>
         </form>
         <div id="whatsappOption" class="whatsapp-redirect" style="display:none;">
           <p>Thank you — your request has been received. Continue on WhatsApp:</p>
-          <a href="https://wa.me/2349060335653?text=Hello%20PALLU%2C%20I%20just%20submitted%20a%20bespoke%20inquiry." target="_blank" rel="noopener">
+          <a href="https://wa.me/2349159723217?text=Hello%20PALLU%2C%20I%20just%20submitted%20a%20bespoke%20inquiry." target="_blank" rel="noopener">
             Chat on WhatsApp
           </a>
         </div>
@@ -1138,7 +956,7 @@
           </div>
           <div class="privacy-block">
             <strong>How We Use It</strong>
-            <p>To process orders, respond to enquiries, and continuously improve our atelier experience.</p>
+            <p>To process orders, respond to enquiries, and continuously improve our service.</p>
           </div>
           <div class="privacy-block">
             <strong>Data Sharing</strong>
@@ -1154,7 +972,7 @@
           </div>
           <div class="privacy-block">
             <strong>Contact</strong>
-            <p>privacy@pallu.com · Victoria Island, Lagos.</p>
+            <p>hello@pallu.ng · WhatsApp: +234 915 972 3217</p>
           </div>
         </div>
       </div>
@@ -1170,42 +988,37 @@
   <script>
     'use strict';
 
-    /* ====================================================
-       PRODUCT DATA — ALL THREE CATEGORIES
-       All images now point to local files in the "images/" folder.
-       Naming pattern: tie4.jpg to tie22.jpg (sequential).
-    ==================================================== */
-    const silkProducts = [
-      { id: 1,  name: "The Eko Midnight",    price: 285, num: "001", img: "images/tie4.jpg"  },
-      { id: 2,  name: "The Ikoyi Mauve",     price: 320, num: "002", img: "images/tie5.jpg"  },
-      { id: 3,  name: "The Victoria Slate",  price: 265, num: "003", img: "images/tie6.jpg"  },
-      { id: 4,  name: "The Lagos Saffron",   price: 295, num: "004", img: "images/tie7.jpg"  },
-      { id: 5,  name: "The Coral Silk",      price: 310, num: "005", img: "images/tie8.jpg"  }
+    // --- PRODUCT DATA (realistic Nigerian prices) ---
+    const ties = [
+      { id: 1, name: "The Eko Midnight Tie", price: 2500, num: "T001", img: "tie1.jpg" },
+      { id: 2, name: "The Ikoyi Mauve Tie", price: 2500, num: "T002", img: "tie2.jpg" },
+      { id: 3, name: "The Victoria Slate Tie", price: 2700, num: "T003", img: "tie3.jpg" },
+      { id: 4, name: "The Lagos Saffron Tie", price: 2800, num: "T004", img: "tie4.jpg" },
+      { id: 5, name: "The Coral Silk Tie", price: 3000, num: "T005", img: "tie5.jpg" },
+      { id: 6, name: "The Benin Bronze Tie", price: 2600, num: "T006", img: "tie6.jpg" },
+      { id: 7, name: "The Oba's Regalia Tie", price: 3200, num: "T007", img: "tie7.jpg" },
+      { id: 8, name: "The Calabar Indigo Tie", price: 2400, num: "T008", img: "tie8.jpg" }
     ];
 
-    const patternedProducts = [
-      { id: 6,  name: "The Benin Bronze",         price: 180, num: "006", img: "images/tie9.jpg"  },
-      { id: 7,  name: "The Oba's Regalia",        price: 375, num: "007", img: "images/tie10.jpg" },
-      { id: 8,  name: "The Calabar Indigo",       price: 290, num: "008", img: "images/tie11.jpg" },
-      { id: 9,  name: "The Abuja Ivory",          price: 305, num: "009", img: "images/tie12.jpg" },
-      { id: 10, name: "The Port Harcourt Pearl",  price: 315, num: "010", img: "images/tie13.jpg" },
-      { id: 15, name: "The Kano Indigo",          price: 165, num: "011", img: "images/tie14.jpg" },
-      { id: 16, name: "The Zaria Geometric",      price: 170, num: "012", img: "images/tie15.jpg" }
+    const waistcoats = [
+      { id: 9, name: "The Executive Navy Waistcoat", price: 5500, num: "W001", img: "waistcoat1.jpg" },
+      { id: 10, name: "The Classic Grey Waistcoat", price: 5000, num: "W002", img: "waistcoat2.png" },
+      { id: 11, name: "The Burgundy Luxe Waistcoat", price: 6000, num: "W003", img: "waistcoat3.jpg" },
+      { id: 12, name: "The Ivory Wedding Waistcoat", price: 5800, num: "W004", img: "waistcoat4.jpg" },
+      { id: 13, name: "The Black Tie Waistcoat", price: 5200, num: "W005", img: "waistcoat5.jpg" },
+      { id: 14, name: "The Herringbone Waistcoat", price: 5900, num: "W006", img: "waistcoat6.jpg" }
     ];
 
-    const weddingProducts = [
-      { id: 11, name: "The Lekki Navy",           price: 335, num: "013", img: "images/tie16.jpg" },
-      { id: 12, name: "The Osun Gold",            price: 360, num: "014", img: "images/tie17.jpg" },
-      { id: 13, name: "The Ivory Pearl",          price: 395, num: "015", img: "images/tie18.jpg" },
-      { id: 14, name: "The Royal Champagne",      price: 420, num: "016", img: "images/tie19.jpg" },
-      { id: 17, name: "The Royal Alaga White",    price: 220, num: "017", img: "images/tie20.jpg" },
-      { id: 18, name: "The Groom's Midnight",     price: 210, num: "018", img: "images/tie21.jpg" },
-      { id: 19, name: "The Champagne Celebration",price: 195, num: "019", img: "images/tie22.jpg" }
+    const accessories = [
+      { id: 15, name: "Lagos Gold Brooch", price: 1800, num: "A001", img: "brooch1.jpg" },
+      { id: 16, name: "Crystal Elegance Brooch", price: 2200, num: "A002", img: "brooch2.jpg" },
+      { id: 17, name: "Silver Knot Tie Clip", price: 1200, num: "A003", img: "clip1.jpg" },
+      { id: 18, name: "Gold Arrow Tie Clip", price: 1500, num: "A004", img: "clip2.jpg" },
+      { id: 19, name: "Sapphire Enamel Brooch", price: 2500, num: "A005", img: "brooch3.jpg" },
+      { id: 20, name: "Classic Bar Tie Clip", price: 1300, num: "A006", img: "clip3.jpg" }
     ];
 
-    /* ====================================================
-       CART
-    ==================================================== */
+    // --- CART ---
     let cart = JSON.parse(localStorage.getItem('palluCart') || '[]');
 
     function saveCart() {
@@ -1225,7 +1038,7 @@
       if (!el) return;
       if (!cart.length) {
         el.innerHTML = '<p style="text-align:center; font-size:0.78rem; color:rgba(26,26,26,0.4); padding:2rem 0;">Your cart is empty.</p>';
-        document.getElementById('cartTotal').textContent = 'Total: £0.00';
+        document.getElementById('cartTotal').textContent = 'Total: ₦0.00';
         return;
       }
       let total = 0;
@@ -1236,15 +1049,15 @@
           <div class="cart-item">
             <div>
               <strong>${item.name}</strong>
-              <span style="color:rgba(26,26,26,0.45); font-size:0.7rem;">£${item.price} × ${item.quantity}</span>
+              <span style="color:rgba(26,26,26,0.45); font-size:0.7rem;">₦${item.price.toLocaleString()} × ${item.quantity}</span>
             </div>
             <div class="price-cell">
-              <span>£${sub.toFixed(2)}</span>
+              <span>₦${sub.toLocaleString()}</span>
               <button class="remove-btn" onclick="removeFromCart(${idx})">Remove</button>
             </div>
           </div>`;
       }).join('');
-      document.getElementById('cartTotal').textContent = `Total: £${total.toFixed(2)}`;
+      document.getElementById('cartTotal').textContent = `Total: ₦${total.toLocaleString()}`;
     }
 
     window.removeFromCart = (idx) => { cart.splice(idx, 1); saveCart(); };
@@ -1254,7 +1067,7 @@
       if (ex) ex.quantity++;
       else cart.push({ id, name, price: +price, quantity: 1 });
       saveCart();
-      showToast(`${name} added.`);
+      showToast(`${name} added to cart.`);
     }
 
     function showToast(msg) {
@@ -1264,9 +1077,7 @@
       setTimeout(() => t.classList.remove('visible'), 2200);
     }
 
-    /* ====================================================
-       SCROLL REVEAL OBSERVER
-    ==================================================== */
+    // --- RENDER FUNCTIONS ---
     const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -1276,9 +1087,6 @@
       });
     }, { threshold: 0.08 });
 
-    /* ====================================================
-       RENDER PRODUCT CARDS
-    ==================================================== */
     function buildCard(p) {
       return `
         <div class="product-card" data-id="${p.id}" data-name="${p.name}" data-price="${p.price}">
@@ -1289,7 +1097,7 @@
           <div class="product-info">
             <p class="product-num">No. ${p.num}</p>
             <p class="product-name">${p.name}</p>
-            <p class="product-price">£ ${p.price.toFixed(2)}</p>
+            <p class="product-price">₦ ${p.price.toLocaleString()}</p>
           </div>
         </div>`;
     }
@@ -1308,39 +1116,31 @@
       const container = document.getElementById(containerId);
       if (!container) return;
       if (!products.length) {
-        container.innerHTML = '<div class="empty-state">No pieces found.</div>';
+        container.innerHTML = '<div class="empty-state">No items found.</div>';
         return;
       }
       container.innerHTML = products.map(buildCard).join('');
       attachCardEvents(containerId);
     }
 
-    /* Initial render */
-    renderCategory(silkProducts,     'silkGrid');
-    renderCategory(patternedProducts,'patternedGrid');
-    renderCategory(weddingProducts,  'weddingGrid');
+    // Initial render
+    renderCategory(ties, 'tiesGrid');
+    renderCategory(waistcoats, 'waistcoatsGrid');
+    renderCategory(accessories, 'accessoriesGrid');
 
-    /* ====================================================
-       SEARCH FILTER
-    ==================================================== */
+    // --- SEARCH (filters all categories) ---
     document.getElementById('searchInput')?.addEventListener('input', function() {
       const term = this.value.toLowerCase().trim();
-
       function filterRender(products, containerId) {
-        const filtered = term
-          ? products.filter(p => p.name.toLowerCase().includes(term))
-          : products;
+        const filtered = term ? products.filter(p => p.name.toLowerCase().includes(term)) : products;
         renderCategory(filtered, containerId);
       }
-
-      filterRender(silkProducts,     'silkGrid');
-      filterRender(patternedProducts,'patternedGrid');
-      filterRender(weddingProducts,  'weddingGrid');
+      filterRender(ties, 'tiesGrid');
+      filterRender(waistcoats, 'waistcoatsGrid');
+      filterRender(accessories, 'accessoriesGrid');
     });
 
-    /* ====================================================
-       CART DRAWER
-    ==================================================== */
+    // --- CART DRAWER & CHECKOUT ---
     document.getElementById('cartIcon')?.addEventListener('click',  () => document.getElementById('cartDrawer').classList.add('open'));
     document.getElementById('cartIcon')?.addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('cartDrawer').classList.add('open'); });
     document.getElementById('closeCart')?.addEventListener('click', () => document.getElementById('cartDrawer').classList.remove('open'));
@@ -1349,15 +1149,13 @@
       document.getElementById('cartDrawer').classList.add('open');
     });
 
-    /* WHATSAPP CHECKOUT — clear + reload */
     document.getElementById('checkoutBtn')?.addEventListener('click', () => {
       if (!cart.length) { showToast('Your cart is empty.'); return; }
       let msg = "Hello PALLU, I'd like to place an order:%0A";
-      cart.forEach(i => { msg += `- ${i.name} x${i.quantity} – £${(i.price*i.quantity).toFixed(2)}%0A`; });
+      cart.forEach(i => { msg += `- ${i.name} x${i.quantity} – ₦${(i.price*i.quantity).toLocaleString()}%0A`; });
       const total = cart.reduce((s, i) => s + i.price * i.quantity, 0);
-      msg += `%0ATotal: £${total.toFixed(2)}`;
-      window.open(`https://wa.me/2349060335653?text=${msg}`, '_blank');
-      /* Immediately clear */
+      msg += `%0ATotal: ₦${total.toLocaleString()}`;
+      window.open(`https://wa.me/2349159723217?text=${msg}`, '_blank');
       localStorage.clear();
       cart = [];
       updateCartUI();
@@ -1365,9 +1163,7 @@
       showToast('Order sent! Cart cleared.');
     });
 
-    /* ====================================================
-       MODALS
-    ==================================================== */
+    // --- MODALS ---
     function openModal(modal) {
       modal.classList.add('animating');
       modal.style.display = 'flex';
@@ -1394,6 +1190,10 @@
 
     document.getElementById('footerContactLink')?.addEventListener('click', e => { e.preventDefault(); openBespoke(); });
     document.getElementById('privacyLink')?.addEventListener('click', e => { e.preventDefault(); openModal(privacyModal); });
+    document.getElementById('whatsappFooter')?.addEventListener('click', e => {
+      e.preventDefault();
+      window.open('https://wa.me/2349159723217', '_blank');
+    });
 
     document.querySelectorAll('.modal-close').forEach(btn => {
       btn.addEventListener('click', () => { closeModal(bespokeModal); closeModal(privacyModal); });
@@ -1402,7 +1202,6 @@
       m?.addEventListener('click', e => { if (e.target === m) closeModal(m); });
     });
 
-    /* Formspree */
     document.getElementById('bespokeForm')?.addEventListener('submit', async e => {
       e.preventDefault();
       const form = e.target;
@@ -1421,9 +1220,7 @@
       }
     });
 
-    /* ====================================================
-       STICKY NAV & MOBILE MENU
-    ==================================================== */
+    // --- STICKY NAV & MOBILE MENU ---
     window.addEventListener('scroll', () => {
       document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
@@ -1434,7 +1231,7 @@
       a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
     });
 
-    /* Smooth scroll for anchor links */
+    // --- SMOOTH SCROLL FOR ANCHOR LINKS ---
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', function(e) {
         const t = document.querySelector(this.getAttribute('href'));
@@ -1442,10 +1239,10 @@
       });
     });
 
-    /* Observe static reveal elements */
+    // --- SCROLL REVEAL INIT ---
     document.querySelectorAll('.reveal').forEach(r => revealObserver.observe(r));
 
-    /* Handle anchor hash on load (e.g. collection.html#collection-silk) */
+    // --- HANDLE HASH ON LOAD ---
     window.addEventListener('load', () => {
       if (location.hash) {
         const target = document.querySelector(location.hash);
