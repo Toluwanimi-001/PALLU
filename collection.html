@@ -10,9 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* ====================================================
-       RESET & DESIGN TOKENS — COLOR PALETTE
-    ==================================================== */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -20,9 +17,9 @@
     }
 
     :root {
-      --accent:       #800020;      /* Burgundy – buttons, CTAs, active links */
+      --accent:       #800020;
       --accent-light: #9a2a44;
-      --text-dark:    #1A1A1A;      /* Deep Onyx – all body text, headings */
+      --text-dark:    #1A1A1A;
       --bg-white:     #FFFFFF;
       --bg-gray:      #F2F2F2;
       --highlight:    #C5A059;
@@ -45,9 +42,6 @@
 
     @keyframes bodyFadeIn { to { opacity: 1; } }
 
-    /* ====================================================
-       SCROLL REVEAL — HARDWARE ACCELERATED
-    ==================================================== */
     .reveal {
       opacity: 0;
       transform: translateY(32px);
@@ -60,9 +54,6 @@
     .reveal-d3 { transition-delay: 0.32s; }
     .reveal-d4 { transition-delay: 0.44s; }
 
-    /* ====================================================
-       TYPOGRAPHY
-    ==================================================== */
     .eyebrow {
       font-family: var(--sans);
       font-size: 0.62rem;
@@ -71,6 +62,7 @@
       text-transform: uppercase;
       color: var(--accent);
     }
+
     hr.ornament {
       width: 44px;
       border: none;
@@ -78,9 +70,6 @@
       margin: 1.2rem 0;
     }
 
-    /* ====================================================
-       NAVIGATION
-    ==================================================== */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -90,7 +79,7 @@
       align-items: center;
       justify-content: space-between;
       transition: background 0.5s ease, backdrop-filter 0.5s ease, padding 0.4s var(--ease-luxury);
-      background: var(--bg-white);
+      background: transparent;
     }
 
     nav.scrolled {
@@ -164,9 +153,6 @@
     .nav-hamburger svg line { stroke: var(--text-dark); transition: stroke 0.3s; }
     .nav-hamburger:hover svg line { stroke: var(--accent); }
 
-    /* ====================================================
-       MOBILE OVERLAY
-    ==================================================== */
     .mobile-nav {
       position: fixed;
       inset: 0;
@@ -210,9 +196,6 @@
     .mobile-close svg { stroke: var(--text-dark); transition: stroke 0.3s; }
     .mobile-close:hover svg { stroke: var(--accent); }
 
-    /* ====================================================
-       BUTTONS
-    ==================================================== */
     .btn-ghost {
       display: inline-block;
       padding: 1rem 3rem;
@@ -242,18 +225,12 @@
     .btn-ghost:hover { border-color: var(--accent); color: white; }
     .btn-ghost:hover::before { transform: translateX(0); }
 
-    /* ====================================================
-       COLLECTION LAYOUT
-    ==================================================== */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* ====================================================
-       COLLECTION HERO BANNER
-    ==================================================== */
     .collection-banner {
       padding-top: 100px;
       background: var(--bg-white);
@@ -278,7 +255,6 @@
       margin: 0 auto 2rem;
     }
 
-    /* SEARCH */
     .search-wrap {
       max-width: 380px;
       margin: 0 auto;
@@ -310,7 +286,6 @@
       stroke: var(--text-dark);
     }
 
-    /* CATEGORY NAV PILLS */
     .category-pills {
       display: flex;
       justify-content: center;
@@ -335,9 +310,6 @@
       border-color: var(--accent);
     }
 
-    /* ====================================================
-       CATEGORY SECTION
-    ==================================================== */
     .category-section {
       padding: 6rem 0 4rem;
       scroll-margin-top: 95px;
@@ -373,9 +345,6 @@
       margin: 0 auto;
     }
 
-    /* ====================================================
-       PRODUCT GRID
-    ==================================================== */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -466,9 +435,6 @@
       font-style: italic;
     }
 
-    /* ====================================================
-       CART DRAWER & MODAL (reusing styles from main page)
-    ==================================================== */
     .cart-drawer {
       position: fixed;
       top: 0;
@@ -603,9 +569,6 @@
     .privacy-block p { font-size: 0.75rem; font-weight: 300; line-height: 1.8; color: rgba(26, 26, 26, 0.65); }
     .privacy-block strong { display: block; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
 
-    /* ====================================================
-       FOOTER
-    ==================================================== */
     footer {
       background: var(--bg-gray);
       padding: 4.5rem 0 2rem;
@@ -671,9 +634,6 @@
       letter-spacing: 0.07em;
     }
 
-    /* ====================================================
-       TOAST
-    ==================================================== */
     .toast {
       position: fixed;
       bottom: 24px; right: 24px;
@@ -692,9 +652,6 @@
     }
     .toast.visible { opacity: 1; transform: translateY(0); }
 
-    /* ====================================================
-       RESPONSIVE
-    ==================================================== */
     @media (max-width: 1024px) {
       nav { padding: 1.2rem 2rem; }
       nav.scrolled { padding: 0.85rem 2rem; }
@@ -722,9 +679,6 @@
 </head>
 <body>
 
-  <!-- ====================================================
-       MOBILE OVERLAY
-  ==================================================== -->
   <div class="mobile-nav" id="mobileNav">
     <button class="mobile-close" id="mobileClose" aria-label="Close menu">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -737,9 +691,6 @@
     <a href="#" id="mobileCartLink">Cart&nbsp;<span id="mobileCartCount">(0)</span></a>
   </div>
 
-  <!-- ====================================================
-       NAVIGATION
-  ==================================================== -->
   <nav id="nav">
     <div class="nav-left">
       <a class="nav-logo" href="index.html">
@@ -771,15 +722,11 @@
     </div>
   </nav>
 
-  <!-- ====================================================
-       COLLECTION BANNER HEADER
-  ==================================================== -->
   <header class="collection-banner">
     <span class="eyebrow reveal">Complete Archive · 2026</span>
     <h1 class="reveal reveal-d1">The Full Collection</h1>
     <p class="reveal reveal-d2">Ties · Waistcoats · Brooches · Tie Clips</p>
 
-    <!-- Search -->
     <div class="search-wrap reveal reveal-d3">
       <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
@@ -787,7 +734,6 @@
       <input type="text" id="searchInput" placeholder="Search the collection…" autocomplete="off">
     </div>
 
-    <!-- Category pills -->
     <div class="category-pills reveal reveal-d4">
       <a href="#ties" class="pill">Ties</a>
       <a href="#waistcoats" class="pill">Waistcoats</a>
@@ -795,13 +741,9 @@
     </div>
   </header>
 
-  <!-- ====================================================
-       MAIN CONTENT
-  ==================================================== -->
   <main>
     <div class="container">
 
-      <!-- ── CATEGORY 1: TIES ────────────────────────────── -->
       <section id="ties" class="category-section">
         <div class="category-header">
           <span class="category-eyebrow">Signature Neckwear</span>
@@ -811,7 +753,6 @@
         <div class="product-grid" id="tiesGrid"></div>
       </section>
 
-      <!-- ── CATEGORY 2: WAISTCOATS ──────────────────────── -->
       <section id="waistcoats" class="category-section">
         <div class="category-header">
           <span class="category-eyebrow">Bespoke Elegance</span>
@@ -821,7 +762,6 @@
         <div class="product-grid" id="waistcoatsGrid"></div>
       </section>
 
-      <!-- ── CATEGORY 3: ACCESSORIES (Brooches & Tie Clips) ─ -->
       <section id="accessories" class="category-section">
         <div class="category-header">
           <span class="category-eyebrow">The Finishing Touch</span>
@@ -831,12 +771,9 @@
         <div class="product-grid" id="accessoriesGrid"></div>
       </section>
 
-    </div><!-- /container -->
+    </div>
   </main>
 
-  <!-- ====================================================
-       FOOTER
-  ==================================================== -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -901,9 +838,6 @@
     </div>
   </footer>
 
-  <!-- ====================================================
-       CART DRAWER
-  ==================================================== -->
   <div id="cartDrawer" class="cart-drawer">
     <div class="cart-header">
       <h3>Your Cart</h3>
@@ -914,9 +848,6 @@
     <button id="checkoutBtn" class="checkout-btn">Checkout via WhatsApp</button>
   </div>
 
-  <!-- ====================================================
-       BESPOKE MODAL
-  ==================================================== -->
   <div id="bespokeModal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-wrapper">
       <div class="modal-content">
@@ -940,9 +871,6 @@
     </div>
   </div>
 
-  <!-- ====================================================
-       PRIVACY MODAL
-  ==================================================== -->
   <div id="privacyModal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-wrapper">
       <div class="modal-content" style="max-width:680px; border-radius: 4px 4px 0 0;">
@@ -979,16 +907,19 @@
     </div>
   </div>
 
-  <!-- Toast -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <!-- ====================================================
-       JAVASCRIPT
-  ==================================================== -->
   <script>
     'use strict';
 
-    // --- PRODUCT DATA (realistic Nigerian prices) ---
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.shiftKey && e.key === 'J') || (e.ctrlKey && e.key === 'U')) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
     const ties = [
       { id: 1, name: "The Eko Midnight Tie", price: 2500, num: "T001", img: "tie1.jpg" },
       { id: 2, name: "The Ikoyi Mauve Tie", price: 2500, num: "T002", img: "tie2.jpg" },
@@ -1018,7 +949,6 @@
       { id: 20, name: "Classic Bar Tie Clip", price: 1300, num: "A006", img: "clip3.jpg" }
     ];
 
-    // --- CART ---
     let cart = JSON.parse(localStorage.getItem('palluCart') || '[]');
 
     function saveCart() {
@@ -1077,7 +1007,6 @@
       setTimeout(() => t.classList.remove('visible'), 2200);
     }
 
-    // --- RENDER FUNCTIONS ---
     const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -1123,12 +1052,10 @@
       attachCardEvents(containerId);
     }
 
-    // Initial render
     renderCategory(ties, 'tiesGrid');
     renderCategory(waistcoats, 'waistcoatsGrid');
     renderCategory(accessories, 'accessoriesGrid');
 
-    // --- SEARCH (filters all categories) ---
     document.getElementById('searchInput')?.addEventListener('input', function() {
       const term = this.value.toLowerCase().trim();
       function filterRender(products, containerId) {
@@ -1140,7 +1067,6 @@
       filterRender(accessories, 'accessoriesGrid');
     });
 
-    // --- CART DRAWER & CHECKOUT ---
     document.getElementById('cartIcon')?.addEventListener('click',  () => document.getElementById('cartDrawer').classList.add('open'));
     document.getElementById('cartIcon')?.addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('cartDrawer').classList.add('open'); });
     document.getElementById('closeCart')?.addEventListener('click', () => document.getElementById('cartDrawer').classList.remove('open'));
@@ -1163,7 +1089,6 @@
       showToast('Order sent! Cart cleared.');
     });
 
-    // --- MODALS ---
     function openModal(modal) {
       modal.classList.add('animating');
       modal.style.display = 'flex';
@@ -1220,7 +1145,6 @@
       }
     });
 
-    // --- STICKY NAV & MOBILE MENU ---
     window.addEventListener('scroll', () => {
       document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
@@ -1231,7 +1155,6 @@
       a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
     });
 
-    // --- SMOOTH SCROLL FOR ANCHOR LINKS ---
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', function(e) {
         const t = document.querySelector(this.getAttribute('href'));
@@ -1239,10 +1162,8 @@
       });
     });
 
-    // --- SCROLL REVEAL INIT ---
     document.querySelectorAll('.reveal').forEach(r => revealObserver.observe(r));
 
-    // --- HANDLE HASH ON LOAD ---
     window.addEventListener('load', () => {
       if (location.hash) {
         const target = document.querySelector(location.hash);
