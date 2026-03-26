@@ -4,16 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>PALLU — Nigerian Luxury | Ties, Waistcoats & Accessories</title>
-  <!-- Favicon using the logo image -->
   <link rel="icon" type="image/png" href="pallu-logo.png?v=2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* ====================================================
-       RESET & DESIGN TOKENS — COLOR PALETTE
-    ==================================================== */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -21,9 +17,9 @@
     }
 
     :root {
-      --accent:       #800020;      /* Burgundy – buttons, CTAs, active links */
+      --accent:       #800020;
       --accent-light: #9a2a44;
-      --text-dark:    #1A1A1A;      /* Deep Onyx – all body text, headings */
+      --text-dark:    #1A1A1A;
       --bg-white:     #FFFFFF;
       --bg-gray:      #F2F2F2;
       --highlight:    #C5A059;
@@ -74,9 +70,6 @@
       margin: 1.2rem 0;
     }
 
-    /* ====================================================
-       NAVIGATION
-    ==================================================== */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -86,7 +79,7 @@
       align-items: center;
       justify-content: space-between;
       transition: background 0.5s ease, backdrop-filter 0.5s ease, padding 0.4s var(--ease-luxury);
-      background: var(--bg-white);
+      background: transparent;
     }
 
     nav.scrolled {
@@ -160,9 +153,6 @@
     .nav-hamburger svg line { stroke: var(--text-dark); transition: stroke 0.3s; }
     .nav-hamburger:hover svg line { stroke: var(--accent); }
 
-    /* ====================================================
-       MOBILE OVERLAY
-    ==================================================== */
     .mobile-nav {
       position: fixed;
       inset: 0;
@@ -206,9 +196,6 @@
     .mobile-close svg { stroke: var(--text-dark); transition: stroke 0.3s; }
     .mobile-close:hover svg { stroke: var(--accent); }
 
-    /* ====================================================
-       HERO
-    ==================================================== */
     #hero {
       height: 100svh;
       min-height: 640px;
@@ -276,9 +263,6 @@
       50%       { opacity: 1;    transform: scaleY(1.18); }
     }
 
-    /* ====================================================
-       BUTTONS
-    ==================================================== */
     .btn-ghost {
       display: inline-block;
       padding: 1rem 3rem;
@@ -308,9 +292,6 @@
     .btn-ghost:hover { border-color: var(--accent); color: white; }
     .btn-ghost:hover::before { transform: translateX(0); }
 
-    /* ====================================================
-       MARQUEE
-    ==================================================== */
     .marquee-strip {
       background: var(--accent);
       padding: 0.8rem 0;
@@ -338,9 +319,6 @@
       to   { transform: translateX(-50%); }
     }
 
-    /* ====================================================
-       COLLECTION PREVIEW
-    ==================================================== */
     #collection-preview {
       background: var(--bg-white);
       padding: 7.5rem 0 9rem;
@@ -400,9 +378,6 @@
     .product-name { font-family: var(--serif); font-size: 1.2rem; font-style: italic; margin-bottom: 0.35rem; color: var(--text-dark); }
     .product-price { font-size: 0.68rem; font-weight: 300; color: var(--accent); letter-spacing: 0.10em; }
 
-    /* ====================================================
-       HERITAGE SECTION
-    ==================================================== */
     #heritage {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -484,9 +459,6 @@
     .btn-outline-dark:hover::before { transform: translateX(0); }
     .btn-outline-dark span { position: relative; z-index: 1; }
 
-    /* ====================================================
-       NUMBERS
-    ==================================================== */
     #numbers {
       background: var(--bg-white);
       padding: 6rem 0;
@@ -513,9 +485,6 @@
       text-transform: uppercase;
     }
 
-    /* ====================================================
-       TESTIMONIALS
-    ==================================================== */
     #testimonials {
       background: var(--bg-gray);
       padding: 9rem 0;
@@ -554,9 +523,6 @@
       z-index: 1;
     }
 
-    /* ====================================================
-       BESPOKE CTA
-    ==================================================== */
     #bespoke {
       background: var(--bg-white);
       padding: 9rem 0;
@@ -594,9 +560,6 @@
       color: rgba(26, 26, 26, 0.65);
     }
 
-    /* ====================================================
-       FOOTER
-    ==================================================== */
     footer {
       background: var(--bg-gray);
       padding: 4.5rem 0 2rem;
@@ -662,12 +625,6 @@
       letter-spacing: 0.07em;
     }
 
-    /* ====================================================
-       CART DRAWER & MODAL (same as before)
-    ==================================================== */
-    /* ... (keep all cart and modal styles unchanged) ... */
-    /* To save space, I'll reuse the previous cart drawer and modal styles exactly as in your original. */
-    /* In a real production, we would include them here. For brevity, I'll copy them from the previous version. */
     .cart-drawer {
       position: fixed;
       top: 0;
@@ -821,9 +778,6 @@
     }
     .toast.visible { opacity: 1; transform: translateY(0); }
 
-    /* ====================================================
-       RESPONSIVE
-    ==================================================== */
     @media (max-width: 1024px) {
       nav { padding: 1.2rem 2rem; }
       nav.scrolled { padding: 0.85rem 2rem; }
@@ -855,9 +809,6 @@
 </head>
 <body>
 
-  <!-- ====================================================
-       MOBILE OVERLAY
-  ==================================================== -->
   <div class="mobile-nav" id="mobileNav">
     <button class="mobile-close" id="mobileClose" aria-label="Close menu">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -870,9 +821,6 @@
     <a href="#" id="mobileCartLink">Cart&nbsp;<span id="mobileCartCount">(0)</span></a>
   </div>
 
-  <!-- ====================================================
-       NAVIGATION
-  ==================================================== -->
   <nav id="nav">
     <div class="nav-left">
       <a class="nav-logo" href="#">
@@ -903,9 +851,6 @@
     </div>
   </nav>
 
-  <!-- ====================================================
-       HERO
-  ==================================================== -->
   <section id="hero">
     <div class="hero-bg-img"></div>
     <div class="hero-content">
@@ -914,7 +859,7 @@
         Style that<br><em>Commands Attention.</em>
       </h1>
       <p class="hero-sub reveal reveal-d2">
-        Premium ties, waistcoats, brooches & tie clips — curated for the modern African gentleman.<br>Confidence in every detail.
+        Premium ties, waistcoats, brooches & tie clips curated for the modern African gentleman.<br>Confidence in every detail.
       </p>
       <div class="reveal reveal-d3">
         <a href="#collection-preview" class="btn-ghost"><span>Explore the Collection</span></a>
@@ -926,9 +871,6 @@
     </div>
   </section>
 
-  <!-- ====================================================
-       MARQUEE
-  ==================================================== -->
   <div class="marquee-strip">
     <div class="marquee-track">
       <div class="marquee-item"><div class="marquee-dot"></div>Premium Ties</div>
@@ -938,7 +880,6 @@
       <div class="marquee-item"><div class="marquee-dot"></div>Fashion Tips</div>
       <div class="marquee-item"><div class="marquee-dot"></div>Free Delivery in Lagos</div>
       <div class="marquee-item"><div class="marquee-dot"></div>Shop Online</div>
-      <!-- duplicate for seamless loop -->
       <div class="marquee-item"><div class="marquee-dot"></div>Premium Ties</div>
       <div class="marquee-item"><div class="marquee-dot"></div>Bespoke Waistcoats</div>
       <div class="marquee-item"><div class="marquee-dot"></div>Luxury Brooches</div>
@@ -949,9 +890,6 @@
     </div>
   </div>
 
-  <!-- ====================================================
-       COLLECTION PREVIEW
-  ==================================================== -->
   <section id="collection-preview">
     <div class="container">
       <div class="section-header">
@@ -1004,9 +942,6 @@
     </div>
   </section>
 
-  <!-- ====================================================
-       HERITAGE
-  ==================================================== -->
   <section id="heritage">
     <div class="heritage-img reveal">
       <img src="heritage.jpg" alt="Craftsmanship" loading="lazy">
@@ -1016,7 +951,7 @@
       <p class="eyebrow reveal">The PALLU Story</p>
       <hr class="ornament-dark reveal reveal-d1">
       <blockquote class="heritage-quote reveal reveal-d2">
-        Your key to confidence — impeccable style from head to toe.
+        Your key to confidence: impeccable style from head to toe.
       </blockquote>
       <p class="heritage-body reveal reveal-d3">
         PALLU is a Nigerian online store dedicated to elevating your wardrobe. From meticulously crafted ties and waistcoats to brooches and tie clips, every piece is selected to give you a polished, commanding look. We also share fashion tips to help you master your style.
@@ -1027,9 +962,6 @@
     </div>
   </section>
 
-  <!-- ====================================================
-       NUMBERS
-  ==================================================== -->
   <section id="numbers">
     <div class="container">
       <div class="numbers-grid">
@@ -1053,9 +985,6 @@
     </div>
   </section>
 
-  <!-- ====================================================
-       TESTIMONIALS
-  ==================================================== -->
   <section id="testimonials">
     <div class="container">
       <div style="display:flex; justify-content:center; gap:5px; margin-bottom:1.8rem; color: var(--highlight);">
@@ -1068,9 +997,6 @@
     </div>
   </section>
 
-  <!-- ====================================================
-       BESPOKE CTA
-  ==================================================== -->
   <section id="bespoke">
     <div class="bespoke-bg"></div>
     <div class="bespoke-inner">
@@ -1079,15 +1005,12 @@
         Your Signature,<br><em>Curated For You.</em>
       </h2>
       <p class="bespoke-body reveal reveal-d2">
-        Book a virtual styling session. We’ll help you select the perfect tie, waistcoat, or accessory for any occasion — from boardroom to wedding.
+        Book a virtual styling session. We’ll help you select the perfect tie, waistcoat, or accessory for any occasion; from boardroom to wedding.
       </p>
       <button class="btn-ghost reveal reveal-d3" id="bespokeBtn"><span>Book a Consultation</span></button>
     </div>
   </section>
 
-  <!-- ====================================================
-       FOOTER
-  ==================================================== -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -1152,9 +1075,6 @@
     </div>
   </footer>
 
-  <!-- ====================================================
-       CART DRAWER
-  ==================================================== -->
   <div id="cartDrawer" class="cart-drawer" role="dialog" aria-label="Shopping cart">
     <div class="cart-header">
       <h3>Your Cart</h3>
@@ -1165,9 +1085,6 @@
     <button id="checkoutBtn" class="checkout-btn">Checkout via WhatsApp</button>
   </div>
 
-  <!-- ====================================================
-       BESPOKE MODAL
-  ==================================================== -->
   <div id="bespokeModal" class="modal" role="dialog" aria-modal="true" aria-label="Bespoke inquiry">
     <div class="modal-wrapper">
       <div class="modal-content">
@@ -1191,9 +1108,6 @@
     </div>
   </div>
 
-  <!-- ====================================================
-       PRIVACY MODAL
-  ==================================================== -->
   <div id="privacyModal" class="modal" role="dialog" aria-modal="true" aria-label="Privacy policy">
     <div class="modal-wrapper">
       <div class="modal-content" style="max-width:680px; border-radius: 4px 4px 0 0;">
@@ -1230,14 +1144,18 @@
     </div>
   </div>
 
-  <!-- Toast Notification -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <!-- ====================================================
-       JAVASCRIPT
-  ==================================================== -->
   <script>
     'use strict';
+
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.shiftKey && e.key === 'J') || (e.ctrlKey && e.key === 'U')) {
+        e.preventDefault();
+        return false;
+      }
+    });
 
     let cart = JSON.parse(localStorage.getItem('palluCart') || '[]');
 
