@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="PALLU – Nigerian online store for premium ties, waistcoats, brooches, and tie clips. Style tips and bespoke consultations. Confidence in every detail." />
+  <meta name="keywords" content="PALLU, Nigerian ties, waistcoats Nigeria, brooches, tie clips, bespoke, Lagos fashion, men's accessories" />
+  <meta name="author" content="PALLU" />
+  <meta name="robots" content="index, follow" />
   <title>PALLU — Nigerian Luxury | Ties, Waistcoats & Accessories</title>
   <link rel="icon" type="image/png" href="pallu-logo.png?v=2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
 
     :root {
@@ -778,6 +782,28 @@
     }
     .toast.visible { opacity: 1; transform: translateY(0); }
 
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1000;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-float:hover { transform: scale(1.05); }
+    .whatsapp-float svg {
+      width: 36px;
+      height: 36px;
+      fill: white;
+    }
+
     @media (max-width: 1024px) {
       nav { padding: 1.2rem 2rem; }
       nav.scrolled { padding: 0.85rem 2rem; }
@@ -794,6 +820,8 @@
       .heritage-text { padding: 4rem 2.2rem; }
       .cart-drawer { width: 100%; right: -100%; }
       .modal-content { max-width: 100%; border-radius: 8px 8px 0 0; padding: 2.5rem 1.8rem; }
+      .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+      .whatsapp-float svg { width: 30px; height: 30px; }
     }
     @media (max-width: 560px) {
       .product-grid-preview { grid-template-columns: 1fr; }
@@ -951,7 +979,7 @@
       <p class="eyebrow reveal">The PALLU Story</p>
       <hr class="ornament-dark reveal reveal-d1">
       <blockquote class="heritage-quote reveal reveal-d2">
-        Your key to confidence: impeccable style from head to toe.
+        Your key to confidence — impeccable style from head to toe.
       </blockquote>
       <p class="heritage-body reveal reveal-d3">
         PALLU is a Nigerian online store dedicated to elevating your wardrobe. From meticulously crafted ties and waistcoats to brooches and tie clips, every piece is selected to give you a polished, commanding look. We also share fashion tips to help you master your style.
@@ -1005,7 +1033,7 @@
         Your Signature,<br><em>Curated For You.</em>
       </h2>
       <p class="bespoke-body reveal reveal-d2">
-        Book a virtual styling session. We’ll help you select the perfect tie, waistcoat, or accessory for any occasion; from boardroom to wedding.
+        Book a virtual styling session. We’ll help you select the perfect tie, waistcoat, or accessory for any occasion — from boardroom to wedding.
       </p>
       <button class="btn-ghost reveal reveal-d3" id="bespokeBtn"><span>Book a Consultation</span></button>
     </div>
@@ -1074,6 +1102,13 @@
       </div>
     </div>
   </footer>
+
+  <a href="https://wa.me/2349159723217?text=Hello%20PALLU%2C%20I%20have%20a%20question%20about%20your%20collection." target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.372 0 0 5.372 0 12c0 2.13.562 4.222 1.62 6.04L0 24l6.014-1.58A11.947 11.947 0 0 0 12 24c6.628 0 12-5.372 12-12S18.628 0 12 0zm0 22c-1.786 0-3.525-.488-5.02-1.402l-.36-.216-3.575.938.953-3.488-.23-.376A9.96 9.96 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z" fill="white"/>
+      <path d="M16.677 14.319c-.328-.164-1.94-.957-2.24-1.066-.3-.11-.518-.164-.736.164-.219.328-.85 1.066-1.04 1.285-.192.218-.382.246-.71.082-.328-.164-1.385-.51-2.637-1.628-.977-.878-1.637-1.96-1.827-2.29-.192-.328-.02-.506.145-.67.147-.147.327-.383.49-.574.164-.19.219-.328.328-.547.11-.219.055-.41-.027-.574-.082-.164-.736-1.776-1.01-2.43-.266-.645-.537-.555-.736-.555-.191 0-.41 0-.628.004-.218.004-.574.082-.875.41-.3.328-1.147 1.12-1.147 2.73 0 1.61 1.173 3.166 1.337 3.386.164.218 2.31 3.53 5.594 4.947.78.336 1.39.537 1.866.688.784.248 1.497.213 2.062.13.63-.094 1.94-.794 2.214-1.56.274-.766.274-1.42.192-1.557-.082-.136-.301-.22-.63-.383z" fill="white"/>
+    </svg>
+  </a>
 
   <div id="cartDrawer" class="cart-drawer" role="dialog" aria-label="Shopping cart">
     <div class="cart-header">
@@ -1145,6 +1180,30 @@
   </div>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PALLU",
+    "url": "https://pallu.ng",
+    "logo": "https://pallu.ng/pallu-logo.png",
+    "sameAs": [
+      "https://instagram.com/pallu.ng",
+      "https://facebook.com/pallu.ng"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+2349159723217",
+      "contactType": "customer service",
+      "availableLanguage": "English"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NG"
+    }
+  }
+  </script>
 
   <script>
     'use strict';
